@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Nav.css'
 
 //Importacion de imagenes
-import logoWorldMark from "../assets/nav-assets/logoWorldMark.png"
+import logoWorldMark from "../assets/nav-assets/wordMark.png"
 import userIcon from "../assets/nav-assets/userIcon.png"
 import heartIcon from "../assets/nav-assets/heartIcon.png"
 import carIcon from "../assets/nav-assets/shoppingCar.png"
@@ -20,15 +20,16 @@ export function Nav ({}) {
                     <option>All categories</option>
                     <option>CPU</option>
                 </select>
-                <input type="text" placeholder="Buscar productos..." className="nav-search-input" />
+                <div className='nav-search-line'/>
+                <input type="text" placeholder="Search for products" className="nav-search-input" />
                 <button className="nav-search-button">
                     <img src={searchIcon} alt='lupa' className='nav-search-button-icon'/>
                 </button>
             </div>
             <div className="nav-icons-section">
-                <img src={userIcon} alt="Usuario" className="icon" />
-                <img src={heartIcon} alt="Me gusta" className="icon" />
-                <img src={carIcon} alt="Carrito" className="icon" />
+                <a><img src={userIcon} alt="Usuario" className="icon" /></a>
+                <a><img src={heartIcon} alt="Me gusta" className="icon" /></a>
+                <a><img src={carIcon} alt="Carrito" className="icon" /></a>
             </div>
         </nav>
     )
