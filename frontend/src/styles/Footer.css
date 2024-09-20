@@ -1,0 +1,117 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Footer Styles */
+
+.section_padding {
+    padding: 5rem 6rem;
+}
+
+.footer{
+    background-color: #272727;
+}
+
+hr{
+    display: flex;
+    margin: 0 100px;
+    padding: 0;
+}
+
+.sb_footer-logo{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.sb_footer-logo img{
+    width: 236px;
+    padding: 20px 0 0 100px;
+}
+
+.sb_footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.sb_footer-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 92%;
+    text-align: left;
+}
+
+.sb_footer-links-div{
+    margin-top: 1rem;
+}
+
+a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #E1E1E1;
+    text-decoration: none;
+}
+
+.sb_footer-social-div{
+    display: flex;
+    position: relative;
+    bottom: 2rem;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px 0 0 100px;
+}
+
+.sb_footer-social-div h5{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 0 0 10px;
+    width: 20%;
+}
+
+.socialmedia{
+    display: flex;
+    width: 31%;
+}
+
+.socialmedia img{
+    width: 30px;
+}
+
+.socialmedia p{
+    margin: 0 6px;
+}
+
+
+.sb_footer-links-div h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #56B280;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.sb_footer-below{
+    background-color: #161616;
+    padding: 2rem;
+}
+
+.sb_footer-copyright{
+    padding: 0 10rem;
+}
+
+.copyright{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #5E6E89;
+    margin: 0;
+}
+
+@media screen and (max-width: 850px){
+    .sb_footer-social-div {
+        visibility: hidden;
+    }
+}
