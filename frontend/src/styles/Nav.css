@@ -1,4 +1,8 @@
+/*Some Founts used in nav section*/
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100..900&display=swap');
 /* Estilo general del nav */
+
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -6,12 +10,14 @@ nav {
     background-color: #FFF;
     height: 70px;
     padding: 0;
+    font-family: 'Advent Pro', sans-serif;
 }
 
 /* Logo y WorldMark */
 .nav-logo-div {
     display: flex;
     align-items: center;
+    padding-left: 70px;
 }
 
 .nav-logo-img {
@@ -68,6 +74,7 @@ nav {
 }
 .nav-search-input::placeholder {
     color: #000;
+    
 }
 
 .nav-search-button {
@@ -95,12 +102,20 @@ nav {
 .nav-icons-section {
     display: flex;
     align-items: center;
+    padding-right: 70px;
 }
 
 .icon {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icon-car {
     width: 30px;
     height: 30px;
-    margin-left: 20px;
+    padding: 5px;
     cursor: pointer;
 }
 

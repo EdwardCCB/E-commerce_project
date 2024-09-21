@@ -29,7 +29,7 @@ export function Nav ({}) {
             <div className="nav-icons-section">
                 <a><img src={userIcon} alt="Usuario" className="icon" /></a>
                 <a><img src={heartIcon} alt="Me gusta" className="icon" /></a>
-                <a><img src={carIcon} alt="Carrito" className="icon" /></a>
+                <a><img src={carIcon} alt="Carrito" className="icon-car" /></a>
             </div>
         </nav>
     )
