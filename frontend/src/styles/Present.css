@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.present {
+    width: 100%;
+    height: 780px;
+    background-image: url('../assets/present-assets/bg-image.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+.product-info {
+    position: relative; /* Relativo para que los hijos puedan estar posicionados internamente si es necesario */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    z-index: 1; /* Asegura que esté encima del fondo */
+    text-align: center; /* Centra el contenido dentro del div */
+    height: 50%;
+    width: 50%;
+    border-radius:2px;
+}
+
+.present-product-title {
+    margin-top: 10%;
+    font-size: 40px;
+    font-weight: 570;
+    color: #1D252C;
+}
+
+
+.present-product-span {
+    font-size: 18px;
+    height: 25%;
+    color: #1D252C;
+    
+}
+
+/* Estilo adicional para el botón */
+.product-info button {
+    width: 15%;
+    height: 40px;
+    background-color: #56B280; /* Color del botón */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 21px;
+    border-radius: 4px;
+
+}
+
+.product-info button:hover {
+    background-color: #3d8f68; /* Color del botón al pasar el mouse */
+}
