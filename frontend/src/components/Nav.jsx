@@ -2,18 +2,18 @@ import React from 'react';
 import '../styles/Nav.css'
 
 //Importacion de imagenes
-import logoWorldMark from "../assets/nav-assets/wordMark.png"
+import logoWordMark from "../assets/nav-assets/wordMark.png"
 import userIcon from "../assets/nav-assets/userIcon.png"
 import heartIcon from "../assets/nav-assets/heartIcon.png"
 import carIcon from "../assets/nav-assets/shoppingCar.png"
 import searchIcon from "../assets/nav-assets/searchIcon.png"
 
-export function Nav ({}) {
+export function Nav () {
     return (
         <nav>
             <div className="nav-logo-div">
                 <img src="" alt="Logo" className="nav-logo-img" />
-                <img src={logoWorldMark} className="nav-logo-text"/>
+                <img src={logoWordMark} className="nav-logo-text"/>
             </div>
             <div className="nav-search-section">
                 <select className="nav-search-select">
