@@ -57,10 +57,18 @@ const Footer = () => {
                     <div className="sb_footer-social-div">
                         <h5>Follow us</h5>
                         <div className="socialmedia">
-                            <p><img src={facebook} alt=""/></p>
-                            <p><img src={instagram} alt=""/></p>
-                            <p><img src={twitter} alt=""/></p>
-                            <p><img src={linkedin} alt=""/></p>
+                            <p>
+                                <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src={facebook} alt=""/></a>
+                            </p>
+                            <p>
+                                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src={instagram} alt=""/></a>
+                            </p>
+                            <p>
+                                <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><img src={twitter} alt=""/></a>
+                            </p>
+                            <p>
+                                <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt=""/></a>
+                            </p>
                         </div>
                     </div>
                 </div>
