@@ -47,6 +47,12 @@ function App() {
             name: "Product name",
             price: "999.99",
         },
+        {
+            href: "#",
+            img: graphicProduct,
+            name: "Product name",
+            price: "999.99",
+        },
     ];
     const popularProducts = [
         {
@@ -73,6 +79,7 @@ function App() {
             name: "Product name",
             price: "999.99",
         },
+
     ];
     return (
         <div>
@@ -83,7 +90,7 @@ function App() {
                     products={products}
                 />
                 <Sections
-                    title="Products"
+                    title="Popular"
                     description="Our top selling product that you may like"
                     products={popularProducts}
                 />
