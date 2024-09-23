@@ -47,6 +47,11 @@ hr{
     color: #56B280;
     font-size: 16px;
     line-height: 25px;
+    margin: 21.28px 0;
+}
+
+.sb_footer-links-div p{
+    margin: 16px 0;
 }
 
 .sb_footer-links{
@@ -82,7 +87,8 @@ a{
     font-weight: 400;
     font-size: 16px;
     color: #FFFFFF;
-    margin: 0 0 10px;
+    margin: 0;
+    margin-bottom: 10px;
     width: 20%;
     cursor: default;
 }
