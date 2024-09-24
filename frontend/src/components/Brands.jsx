@@ -11,7 +11,7 @@ export function Brands () {
                     <p className="brands-text-content">Some brands from our sponsor.</p>
                 </div>
                 <div className="brands-collage">
-                    <div class="brands-collage-content">
+                    <div className="brands-collage-content">
                         <div className="brand-component">
                             <img src={intel} className="img"></img>
                         </div>
