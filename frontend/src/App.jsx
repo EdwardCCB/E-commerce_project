@@ -1,4 +1,7 @@
 import React from 'react';
+import {Nav} from "./components/Nav.jsx"
+import {Present} from "./components/Present.jsx"
+import {Brands} from "./components/Brands.jsx"
 import { Sections } from "./components/Sections.jsx";
 import graphicProduct from "./assets/graphic-product.svg"
 import promo from "./assets/promo.png";
@@ -87,7 +90,6 @@ function App() {
         <div>
           <Nav></Nav>
           <Present></Present>
-          <Brands></Brands>
             <>
                 <Sections
                     title="Products"
@@ -95,6 +97,7 @@ function App() {
                     products={products}
                 />
                 <Promo promo={promo} />
+                <Brands></Brands>
                 <Sections
                     title="Popular"
                     description="Our top selling product that you may like"
