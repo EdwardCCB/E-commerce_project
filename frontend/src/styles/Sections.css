@@ -1,0 +1,96 @@
+/* Fonts Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Main product section */
+.section-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Section text */
+.section-text {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-text h2 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-text p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #B4B4B4;
+}
+
+/* Structure of product cards */
+.product-card {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Change the 4 according to the desired number of columns */
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit the total width */
+}
+
+/* Card for each product */
+.container-product-img {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.container-product-img:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    background-color: #F7F8FA;
+}
+
+/* Product details */
+.product {
+    align-items: center;
+    padding: 10px 0;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1D293F;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 25px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #56B280;
+    text-align: right;
+    margin-right: 25px;
+}
+
+/* Adaptation for small screens */
+@media (max-width: 768px) {
+    .product-card {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        grid-template-columns: 1fr; /* 1 columns on small screens */
+    }
+}
