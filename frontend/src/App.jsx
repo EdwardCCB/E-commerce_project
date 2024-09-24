@@ -1,7 +1,9 @@
 import React from 'react';
 import { Sections } from "./components/Sections.jsx";
 import graphicProduct from "./assets/graphic-product.svg"
+import promo from "./assets/promo.png";
 import Footer from "./components/Footer.jsx";
+import Promo from "./components/Promo.jsx";
 
 function App() {
     const products = [
@@ -89,6 +91,7 @@ function App() {
                     description="Order it for you or for your beloved ones"
                     products={products}
                 />
+                <Promo promo={promo} />
                 <Sections
                     title="Popular"
                     description="Our top selling product that you may like"
