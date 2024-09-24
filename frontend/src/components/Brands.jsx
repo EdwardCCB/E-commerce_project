@@ -11,7 +11,6 @@ export function Brands () {
                     <p className="brands-text-content">Some brands from our sponsor.</p>
                 </div>
                 <div className="brands-collage">
-                <button className="prev-brand" onClick={() => moveSlide(-1)}>&#10094;</button>
                     <div class="brands-collage-content">
                         <div className="brand-component">
                             <img src={intel} className="img"></img>
@@ -23,7 +22,10 @@ export function Brands () {
                             <img src={intel} className="img"></img>
                         </div>
                     </div>
-                    <button className="next-brand" onClick={() => moveSlide(1)}>&#10095;</button>
+                    <div className="brand-buttons">
+                        <button className="prev-brand" onClick={() => moveSlide(-1)}>&#10094;</button>
+                        <button className="next-brand" onClick={() => moveSlide(1)}>&#10095;</button>
+                    </div>
                 </div>
             </section>
         </div>

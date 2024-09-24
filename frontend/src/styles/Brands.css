@@ -39,6 +39,7 @@
     justify-content: space-between;
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 100px;
 }
 
 .img {
@@ -47,20 +48,32 @@
 
 /*Buttons*/
 
-.prev-brand {
-    position: absolute;
+.brand-buttons {
+    width: 100%;
     z-index: 1;
-    height: 50px;
+    position: relative;
+    bottom: 170px;
+}
+
+.prev-brand {
+    margin-left: 20px;
 }
 
 
 .next-brand{
-    position: absolute;
-    z-index: 1;
-    height: 50px;
-    right: 0;
+    float: right;
+    margin-right: 20px;
+}
+
+.next-brand, .prev-brand {
+    border: 0;
+    font-size: 35px;
+    line-height: 50px;
+    width: 50px;
+    background-color: #F2F2F2;
 }
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Más oscuro en hover */
 }
+
