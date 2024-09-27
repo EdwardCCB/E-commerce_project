@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import './Nav.css'
 
 //Importacion de imagenes
-import logoWordMark from "./assets/wordMark.png"
+import logoWordMark from "./assets/logo.png"
 import userIcon from "./assets/userIcon.png"
 import heartIcon from "./assets/heartIcon.png"
 import carIcon from "./assets/shoppingCar.png"
@@ -12,8 +13,9 @@ export function Nav () {
     return (
         <nav>
             <div className="nav-logo-div">
-                <img src="" alt="Logo" className="nav-logo-img" />
-                <img src={logoWordMark} className="nav-logo-text"/>
+                <Link to="/">
+                    <img src={logoWordMark} alt="" className="nav-logo"/>
+                </Link>
             </div>
             <div className="nav-search-section">
                 <select className="nav-search-select">
