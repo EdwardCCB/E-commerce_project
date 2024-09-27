@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/Brands.css";
-import intel from "../assets/brands-assets/intel.svg"
+import "./Brands.css";
+import intel from "./assets/intel.svg"
 
 export function Brands () {
     return (

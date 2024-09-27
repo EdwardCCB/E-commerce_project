@@ -1,12 +1,12 @@
 import React from 'react';
-import '../styles/Nav.css'
+import './Nav.css'
 
 //Importacion de imagenes
-import logoWordMark from "../assets/nav-assets/wordMark.png"
-import userIcon from "../assets/nav-assets/userIcon.png"
-import heartIcon from "../assets/nav-assets/heartIcon.png"
-import carIcon from "../assets/nav-assets/shoppingCar.png"
-import searchIcon from "../assets/nav-assets/searchIcon.png"
+import logoWordMark from "./assets/wordMark.png"
+import userIcon from "./assets/userIcon.png"
+import heartIcon from "./assets/heartIcon.png"
+import carIcon from "./assets/shoppingCar.png"
+import searchIcon from "./assets/searchIcon.png"
 
 export function Nav () {
     return (

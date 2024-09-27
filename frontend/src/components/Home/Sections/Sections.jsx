@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Sections.css';
+import './Sections.css';
 
 export function Sections({title, description, products = []}) {
     return (

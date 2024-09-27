@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/Footer.css'
-import logo from '../assets/logo.png';
-import facebook from '../assets/facebook.png';
-import instagram from '../assets/instagram.png';
-import twitter from '../assets/twitter-alt.png';
-import linkedin from '../assets/linkedin.png';
+import './Footer.css'
+import logo from './assets/logo.png';
+import facebook from './assets/facebook.png';
+import instagram from './assets/instagram.png';
+import twitter from './assets/twitter-alt.png';
+import linkedin from './assets/linkedin.png';
 
 const CommerceName = "WordMark";
 

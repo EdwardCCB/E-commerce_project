@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/Present.css'
+import './Present.css'
 
-import fondoPresent from '../assets/present-assets/bg-image.svg'
+import fondoPresent from './assets/bg-image.svg'
 
 export function Present () {
     return (

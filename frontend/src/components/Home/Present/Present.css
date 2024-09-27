@@ -3,7 +3,7 @@
 .present {
     width: 100%;
     height: 780px;
-    background-image: url('../assets/present-assets/bg-image.svg');
+    background-image: url('assets/bg-image.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

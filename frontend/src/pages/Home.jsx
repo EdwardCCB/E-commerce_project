@@ -1,14 +1,14 @@
 import React from 'react';
-import {Nav} from "./components/shared/Nav/Nav.jsx"
-import {Present} from "./components/Home/Present/Present.jsx"
-import {Brands} from "./components/Home/Brands/Brands.jsx"
-import {Sections} from "./components/Home/Sections/Sections.jsx";
-import graphicProduct from "./components/Home/Sections/assets/graphic-product.svg"
-import promo from "./components/Home/Promo/assets/promo.png";
-import Footer from "./components/shared/Footer/Footer.jsx";
-import Promo from "./components/Home/Promo/Promo.jsx";
+import {Nav} from "../components/shared/Nav/Nav.jsx"
+import {Present} from "../components/Home/Present/Present.jsx"
+import {Brands} from "../components/Home/Brands/Brands.jsx"
+import {Sections} from "../components/Home/Sections/Sections.jsx";
+import graphicProduct from "../components/Home/Sections/assets/graphic-product.svg"
+import promo from "../components/Home/Promo/assets/promo.png";
+import Footer from "../components/shared/Footer/Footer.jsx";
+import Promo from "../components/Home/Promo/Promo.jsx";
 
-function App() {
+function Home() {
     const products = [
         {
             href: "#",
@@ -88,8 +88,8 @@ function App() {
     ];
     return (
         <div>
-          <Nav></Nav>
-          <Present></Present>
+            <Nav></Nav>
+            <Present></Present>
             <>
                 <Sections
                     title="Products"
@@ -109,4 +109,4 @@ function App() {
     );
 }
 
-export default App
+export default Home
