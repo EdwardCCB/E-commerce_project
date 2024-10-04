@@ -1,4 +1,3 @@
-// src/components/Home/Sections/Sections.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Sections.css';

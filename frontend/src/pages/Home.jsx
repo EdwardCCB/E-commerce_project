@@ -11,8 +11,8 @@ import { products, popularProducts } from "../data/productsData.jsx";
 function Home() {
     return (
         <div>
-            <Nav></Nav>
-            <Present></Present>
+            <Nav />
+            <Present />
             <>
                 <Sections
                     title="Products"
@@ -20,7 +20,7 @@ function Home() {
                     products={products}
                 />
                 <Promo promo={promo} />
-                <Brands></Brands>
+                <Brands />
                 <Sections
                     title="Popular"
                     description="Our top selling product that you may like"
