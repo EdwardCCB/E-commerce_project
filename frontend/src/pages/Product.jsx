@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Footer from "../components/shared/Footer/Footer.jsx";
 import { products } from "../data/productsData.jsx";
 import BuyProduct from '../components/Product/BuyProduct/BuyProduct.jsx';
+import ProductTabs from "../components/Product/Tabs/ProductTabs.jsx";
 
 function Product() {
     const { productName } = useParams();
@@ -19,7 +20,12 @@ function Product() {
     return (
         <>
             <Nav />
-            <BuyProduct img={product.img} name={product.name} price={product.price} />
+            <BuyProduct img={product.img} name={product.name} price={product.price} stars={product.stars} reviews={product.reviews} />
+            <ProductTabs
+                details={product.details}
+                specifications={product.specifications}
+            />
+            <hr />
             <Footer />
         </>
     );

@@ -1,0 +1,40 @@
+.tabs-container {
+    width: 100%;
+    margin: 5rem 0 3rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tabs-header {
+    display: flex;
+    justify-content: flex-start;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.tab-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-right: 2rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #56B280;
+}
+
+.tab-content {
+    padding: 20px 20rem;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.spec-text {
+    font-family: Roboto, sans-serif;
+    color: #849A8E;
+}
