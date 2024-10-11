@@ -25,7 +25,6 @@ function Product() {
                 details={product.details}
                 specifications={product.specifications}
             />
-            <hr />
             <Footer />
         </>
     );

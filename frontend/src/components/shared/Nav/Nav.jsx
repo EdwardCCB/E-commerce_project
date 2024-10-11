@@ -29,9 +29,15 @@ export function Nav () {
                 </button>
             </div>
             <div className="nav-icons-section">
-                <a><img src={userIcon} alt="Usuario" className="icon" /></a>
-                <a><img src={heartIcon} alt="Me gusta" className="icon" /></a>
-                <a><img src={carIcon} alt="Carrito" className="icon-car" /></a>
+                <Link to="/account">
+                    <img src={userIcon} alt="Usuario" className="icon" />
+                </Link>
+                <Link to={"/favorite"}>
+                    <img src={heartIcon} alt="Me gusta" className="icon" />
+                </Link>
+                <Link to={"/cart"}>
+                    <img src={carIcon} alt="Carrito" className="icon-car" />
+                </Link>
             </div>
         </nav>
     )
