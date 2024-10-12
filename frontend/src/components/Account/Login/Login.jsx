@@ -1,14 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '../../../firebase/config';
 import iGoogle from './assets/iconGoogle.svg';
 import './Login.css';
 
-const Login = ({ isRegister, onSubmit }) => {
+const Login = ({ isRegister, onSubmit, onChangeName, onChangeEmail, onChangePassword }) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleLogin = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate('/'); // Redirigir al home después del login
+        } catch (err) {
+            setError('Failed to log in. Please check your credentials.');
+        }
+    };
+
+    // Función para el login con Google
+    const handleGoogleLogin = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            await signInWithPopup(auth, provider);
+            navigate('/'); // Redirigir al home después del login con Google
+        } catch (err) {
+            setError('Failed to log in with Google. Please try again.');
+        }
+    };
+
     return (
         <div className="login-container">
             <h1>{isRegister ? 'Register' : 'Log In'}</h1>
 
-            {/* Input para Name solo en el registro */}
             {isRegister && (
                 <div className="input-group">
                     <label htmlFor="name">Name</label>
@@ -17,6 +44,7 @@ const Login = ({ isRegister, onSubmit }) => {
                         id="name"
                         placeholder="Enter your name"
                         className="rounded-input"
+                        onChange={onChangeName}
                     />
                 </div>
             )}
@@ -28,6 +56,11 @@ const Login = ({ isRegister, onSubmit }) => {
                     id={isRegister ? "email-register" : "email-login"}
                     placeholder="Enter your email"
                     className="rounded-input"
+                    value={email}
+                    onChange={(e) => {
+                        setEmail(e.target.value);
+                        onChangeEmail && onChangeEmail(e);
+                    }}
                 />
             </div>
 
@@ -45,18 +78,23 @@ const Login = ({ isRegister, onSubmit }) => {
                     id={isRegister ? "password-register" : "password-login"}
                     placeholder="Enter your password"
                     className="rounded-input"
+                    value={password}
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                        onChangePassword && onChangePassword(e);
+                    }}
                 />
             </div>
 
-            {/* Checkbox para Log In: "Remember me" */}
+            {error && <p className="error-message">{error}</p>}
+
             {!isRegister && (
                 <div className="checkbox-group">
-                    <input type="checkbox" id="remember-me"/>
+                    <input type="checkbox" id="remember-me" />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
             )}
 
-            {/* Checkbox para Register: "I agree to the terms & policy" */}
             {isRegister && (
                 <div className="checkbox-group">
                     <input type="checkbox" id="terms-policy" />
@@ -66,8 +104,7 @@ const Login = ({ isRegister, onSubmit }) => {
                 </div>
             )}
 
-            {/* Cambiar Log In por Sign Up */}
-            <button className="button login-n-register-btn" onClick={onSubmit}>
+            <button className="button login-n-register-btn" onClick={isRegister ? onSubmit : handleLogin}>
                 {isRegister ? 'Sign Up' : 'Log In'}
             </button>
 
@@ -77,7 +114,8 @@ const Login = ({ isRegister, onSubmit }) => {
                 <hr />
             </div>
 
-            <button className="button google-login-btn">
+            {/* Botón para login con Google */}
+            <button className="button google-login-btn" onClick={handleGoogleLogin}>
                 <img src={iGoogle} alt="Google logo" className="google-icon" />
                 Sign in with Google
             </button>
