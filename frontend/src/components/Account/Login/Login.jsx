@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { auth } from '../../../firebase/config';
+import { auth, db } from '../../../firebase/config'; // Asegúrate de que estas rutas son correctas
+import { doc, setDoc, getDoc } from 'firebase/firestore'; // Importa getDoc para comprobar si el usuario ya existe
 import iGoogle from './assets/iconGoogle.svg';
 import './Login.css';
 
@@ -25,7 +26,23 @@ const Login = ({ isRegister, onSubmit, onChangeName, onChangeEmail, onChangePass
     const handleGoogleLogin = async () => {
         const provider = new GoogleAuthProvider();
         try {
-            await signInWithPopup(auth, provider);
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+
+            // Comprobar si el usuario ya existe en Firestore
+            const userDoc = await getDoc(doc(db, 'users', user.uid));
+            if (!userDoc.exists()) {
+                // Guardar el usuario en Firestore si no existe
+                await setDoc(doc(db, 'users', user.uid), {
+                    name: user.displayName,
+                    email: user.email,
+                    role: 'User', // Asignar rol por defecto
+                });
+                console.log("Usuario guardado en Firestore:", user);
+            } else {
+                console.log("El usuario ya existe en Firestore:", user);
+            }
+
             navigate('/'); // Redirigir al home después del login con Google
         } catch (err) {
             setError('Failed to log in with Google. Please try again.');
