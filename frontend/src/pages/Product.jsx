@@ -5,6 +5,7 @@ import Footer from "../components/shared/Footer/Footer.jsx";
 import { products } from "../data/productsData.jsx";
 import BuyProduct from '../components/Product/BuyProduct/BuyProduct.jsx';
 import ProductTabs from "../components/Product/Tabs/ProductTabs.jsx";
+import Reviews from "../components/Product/Reviews/Reviews.jsx";
 
 function Product() {
     const { productName } = useParams();
@@ -25,6 +26,7 @@ function Product() {
                 details={product.details}
                 specifications={product.specifications}
             />
+            <Reviews />
             <Footer />
         </>
     );
