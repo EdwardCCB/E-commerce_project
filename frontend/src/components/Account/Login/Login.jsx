@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { auth, db } from '../../../firebase/config'; // Asegúrate de que estas rutas son correctas
-import { doc, setDoc, getDoc } from 'firebase/firestore'; // Importa getDoc para comprobar si el usuario ya existe
+import { auth, db } from '../../../firebase/config';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import iGoogle from './assets/iconGoogle.svg';
 import './Login.css';
 
