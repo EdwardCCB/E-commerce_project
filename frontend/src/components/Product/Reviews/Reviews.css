@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-h3 {
+.review-container h3 {
     text-align: left;
     font-weight: 500;
     font-size: 18px;
