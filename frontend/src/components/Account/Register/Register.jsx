@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Login from '../Login/Login';
-import { auth, db } from '../../../firebase/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from '../../../firebase/config';
 import { doc, setDoc } from 'firebase/firestore';
+import axios from 'axios';
+import Login from '../Login/Login';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -11,20 +12,24 @@ const Register = () => {
 
     const handleRegister = async () => {
         try {
-            // Crear usuario en Firebase Auth
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // Guardar el nombre y rol en Firestore
             await setDoc(doc(db, 'users', user.uid), {
                 name: name,
                 email: email,
-                role: 'User', // Rol predeterminado
+                role: 'User'
             });
 
-            console.log('Usuario registrado con éxito:', user);
+            await axios.post('http://localhost:5000/api/auth/register', {
+                firebaseId: user.uid,
+                name,
+                email
+            });
+
+            console.log('Usuario registrado en Firebase y MongoDB.');
         } catch (error) {
-            console.error('Error al registrar el usuario:', error);
+            console.error('Error al registrar usuario:', error);
         }
     };
 

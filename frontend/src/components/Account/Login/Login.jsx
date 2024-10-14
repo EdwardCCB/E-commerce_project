@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { auth, db } from '../../../firebase/config';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
+import axios from 'axios';
 import iGoogle from './assets/iconGoogle.svg';
 import './Login.css';
 
@@ -13,10 +14,12 @@ const Login = ({ isRegister, onSubmit, onChangeName, onChangeEmail, onChangePass
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    // Función para login con email y contraseña
     const handleLogin = async () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/'); // Redirigir al home después del login
+            console.log("Login exitoso con email y contraseña.");
+            navigate('/'); // Redirigir al home
         } catch (err) {
             setError('Failed to log in. Please check your credentials.');
         }
@@ -29,21 +32,26 @@ const Login = ({ isRegister, onSubmit, onChangeName, onChangeEmail, onChangePass
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
 
-            // Comprobar si el usuario ya existe en Firestore
+            // Verificar si el usuario ya existe en Firestore
             const userDoc = await getDoc(doc(db, 'users', user.uid));
             if (!userDoc.exists()) {
-                // Guardar el usuario en Firestore si no existe
                 await setDoc(doc(db, 'users', user.uid), {
                     name: user.displayName,
                     email: user.email,
-                    role: 'User', // Asignar rol por defecto
+                    role: 'User'
                 });
                 console.log("Usuario guardado en Firestore:", user);
-            } else {
-                console.log("El usuario ya existe en Firestore:", user);
             }
 
-            navigate('/'); // Redirigir al home después del login con Google
+            // Guardar/verificar usuario en MongoDB mediante el backend
+            await axios.post('http://localhost:5000/api/auth/register', {
+                firebaseId: user.uid,
+                name: user.displayName,
+                email: user.email
+            });
+
+            console.log("Login exitoso y verificado en MongoDB.");
+            navigate('/'); // Redirigir al home
         } catch (err) {
             setError('Failed to log in with Google. Please try again.');
         }
@@ -131,7 +139,6 @@ const Login = ({ isRegister, onSubmit, onChangeName, onChangeEmail, onChangePass
                 <hr />
             </div>
 
-            {/* Botón para login con Google */}
             <button className="button google-login-btn" onClick={handleGoogleLogin}>
                 <img src={iGoogle} alt="Google logo" className="google-icon" />
                 Sign in with Google
